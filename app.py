@@ -27,7 +27,7 @@ def disable():
 def get_variable_id():
     variables = balena.models.environment_variables.application.get_all(app_id)
     for i in variables:
-        if i['name'] == 'TMP_DISABLE_MULTI_ROOM':
+        if i['name'] == 'DISABLE_MULTI_ROOM':
             return i['id']
 
     return None
@@ -36,7 +36,7 @@ def create_fleet_variable():
     balena.auth.login_with_token(auth_token)
     variable_id = get_variable_id()
     if variable_id is None:
-        response = balena.models.environment_variables.application.create(app_id, 'TMP_DISABLE_MULTI_ROOM', '1')
+        response = balena.models.environment_variables.application.create(app_id, 'DISABLE_MULTI_ROOM', '1')
         return response
     return "No need to add"
 
