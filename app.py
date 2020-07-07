@@ -16,11 +16,11 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-@app.route('/enable')
+@app.route('/disable')
 def enable():
     return create_fleet_variable()
 
-@app.route('/disable')
+@app.route('/enable')
 def disable():
     return delete_fleet_variable()
 
