@@ -11,7 +11,6 @@ balena = Balena()
 
 auth_token = os.getenv("AUTH_TOKEN")
 app_id = os.getenv("APP_ID")
-app_id = '1690243'
 
 app = Flask(__name__)
 
